@@ -63,22 +63,7 @@ function solve(arr){
                         break;
                 }
 
-                switch (cardType){
-                    case "S":
-                        cardType = 4;
-                        break;
-                    case "H":
-                        cardType = 3;
-                        break;
-                    case "D":
-                        cardType = 2;
-                        break;
-                    case "C":
-                        cardType = 1;
-                        break;
-            }
-
-            multipliedCards = cardPower * cardType;
+            multipliedCards = cardPower * getCardType(cardType);
             sum += multipliedCards;
         }
 
@@ -92,29 +77,29 @@ function solve(arr){
                     break;
             }
 
-            switch (cardType){
-                case "S":
-                    cardType = 4;
-                    break;
-                case "H":
-                    cardType = 3;
-                    break;
-                case "D":
-                    cardType = 2;
-                    break;
-                case "C":
-                    cardType = 1;
-                    break;
-            }
-            
-            multipliedCards = cardPower * cardType;
+            multipliedCards = cardPower * getCardType(cardType);
             sum += multipliedCards;
         }
     }
 
         console.log(`${name}: ${sum}`);
     }
+
+    function getCardType(cardType){
+        switch (cardType){
+            case "S":
+                return 4;
+            case "H":
+                return 3;
+            case "D":
+                return 2;
+            case "C":
+                return 1;
+        }
+    }
 }
+
+
 
 //for every player, take his deck;
 //for every deck, take its cards;
