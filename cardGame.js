@@ -26,7 +26,7 @@ function solve(arr){
 
 solve(['Pesho: 2C, 4H, 9H, AS, QS',
 'Slav: 3H, 10S, JC, KD, 5S, 10S',
-'Peshoslav: QH, QC, QS, QD',f
+'Peshoslav: QH, QC, QS, QD',
 'Slav: 6H, 7S, KC, KD, 5S, 10C',
 'Peshoslav: QH, QC, JS, JD, JC',
 'Pesho: JD, JD, JD, JD, JD, JD']);
