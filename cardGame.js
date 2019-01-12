@@ -5,18 +5,20 @@ function solve(arr){
         let part = parts.split(": ");
         let name = part[0];
         let deck = part[1];
+
+        //if we dont have a set for this key in the map, then create it;
+        //otherwise we use the existing value;
+
+        let deckSet = playersAndCards.has(name) ? playersAndCards.get(name) : new Set();
         let deckArr = deck.split(", ");
-        let deckSet = new Set();
 
         for (let i = 0; i < deckArr.length; i++){
             deckSet.add(deckArr[i]);
-
         }
-        //console.log(deckSet);
-        playersAndCards.set(name, deckSet);
-    }
 
-    console.log(playersAndCards)
+        playersAndCards.set(name, deckSet);
+
+    }
 
 
 
@@ -31,3 +33,4 @@ solve(['Pesho: 2C, 4H, 9H, AS, QS',
 'Peshoslav: QH, QC, JS, JD, JC',
 'Pesho: JD, JD, JD, JD, JD, JD']);
 
+//
