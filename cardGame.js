@@ -5,21 +5,15 @@ function solve(arr){
         let part = parts.split(": ");
         let name = part[0];
         let deck = part[1];
-
-        //if we dont have a set for this key in the map, then create it;
-        //otherwise we use the existing value;
-
-        let deckSet = playersAndCards.has(name) ? playersAndCards.get(name) : new Set();
         let deckArr = deck.split(", ");
 
-        for (let i = 0; i < deckArr.length; i++){
-            deckSet.add(deckArr[i]);
+        let deckSet = playersAndCards.has(name) ? playersAndCards.get(name) : new Set();
+
+        for (let card of deckArr){
+            deckSet.add(card);
         }
-
         playersAndCards.set(name, deckSet);
-
     }
-
 
     for (let [name, deckSet] of playersAndCards){
         let multipliedCards = 1;
@@ -30,30 +24,43 @@ function solve(arr){
                 let cardPower = card[0];
                 let cardType = card[1];
 
-                if (cardPower === "2"){
-                    cardPower = 2;
-                } else if (cardPower === "3"){
-                    cardPower = 3;
-                } else if (cardPower === "4"){
-                    cardPower = 4;
-                }else if (cardPower === "5"){
-                    cardPower = 5;
-                }else if (cardPower === "6"){
-                    cardPower = 6;
-                }else if (cardPower === "7"){
-                    cardPower = 7;
-                }else if (cardPower === "8"){
-                    cardPower = 8;
-                }else if (cardPower === "9"){
-                    cardPower = 9;
-                } else if (cardPower === "J"){
-                    cardPower = 11;
-                }else if (cardPower === "Q"){
-                    cardPower = 12;
-                }else if (cardPower === "K"){
-                    cardPower = 13;
-                }else if (cardPower === "A"){
-                    cardPower = 14;
+                switch (cardPower){
+                    case "2":
+                        cardPower = 2;
+                        break;
+                    case "3":
+                        cardPower = 3;
+                        break;
+                    case "4":
+                        cardPower = 4;
+                        break;
+                    case "5":
+                        cardPower = 5;
+                        break;
+                    case "6":
+                        cardPower = 6;
+                        break;
+                    case "7":
+                        cardPower = 7;
+                        break;
+                    case "8":
+                        cardPower = 8;
+                        break;
+                    case "9":
+                        cardPower = 9;
+                        break;
+                    case "J":
+                        cardPower = 11;
+                        break;
+                    case "Q":
+                        cardPower = 12;
+                        break;
+                    case "K":
+                        cardPower = 13;
+                        break;
+                    case "A":
+                        cardPower = 14;
+                        break;
                 }
 
                 switch (cardType){
@@ -69,42 +76,56 @@ function solve(arr){
                     case "C":
                         cardType = 1;
                         break;
-                }
-
-                multipliedCards = cardPower * cardType;
-                sum += multipliedCards;
             }
 
-            if (card.length === 3){
+            multipliedCards = cardPower * cardType;
+            sum += multipliedCards;
+        }
+
+        if (card.length === 3){
                 let cardPower = card[0] + card[1];
                 let cardType = card[2];
 
-                if (cardPower === "2"){
-                    cardPower = 2;
-                } else if (cardPower === "3"){
-                    cardPower = 3;
-                } else if (cardPower === "4"){
-                    cardPower = 4;
-                }else if (cardPower === "5"){
-                    cardPower = 5;
-                }else if (cardPower === "6"){
-                    cardPower = 6;
-                }else if (cardPower === "7"){
-                    cardPower = 7;
-                }else if (cardPower === "8"){
-                    cardPower = 8;
-                }else if (cardPower === "9"){
-                    cardPower = 9;
-                } else if (cardPower === "10"){
-                    cardPower = 10;
-                } else if (cardPower === "J"){
-                    cardPower = 11;
-                }else if (cardPower === "Q"){
-                    cardPower = 12;
-                }else if (cardPower === "K"){
-                    cardPower = 13;
-                }else if (cardPower === "A"){
-                    cardPower = 14;
+                switch (cardPower){
+                    case "2":
+                        cardPower = 2;
+                        break;
+                    case "3":
+                        cardPower = 3;
+                        break;
+                    case "4":
+                        cardPower = 4;
+                        break;
+                    case "5":
+                        cardPower = 5;
+                        break;
+                    case "6":
+                        cardPower = 6;
+                        break;
+                    case "7":
+                        cardPower = 7;
+                        break;
+                    case "8":
+                        cardPower = 8;
+                        break;
+                    case "9":
+                        cardPower = 9;
+                        break;
+                    case "10":
+                        carDPower = 10
+                        break;
+                    case "J":
+                        cardPower = 11;
+                        break;
+                    case "Q":
+                        cardPower = 12;
+                        break;
+                    case "K":
+                        cardPower = 13;
+                        break;
+                    case "A":
+                        cardPower = 14;
+                        break;
                 }
 
                 switch (cardType){
@@ -121,12 +142,11 @@ function solve(arr){
                         cardType = 1;
                         break;
                 }
-
-                multipliedCards = cardPower * cardType;
-                sum += multipliedCards;
-            }
+            multipliedCards = cardPower * cardType;
+            sum += multipliedCards;
         }
-        console.log(`${name}: ${sum}`);
+    }
+    console.log(`${name}: ${sum}`);
     }
 }
 
@@ -141,5 +161,3 @@ solve(['Pesho: 2C, 4H, 9H, AS, QS',
 'Slav: 6H, 7S, KC, KD, 5S, 10C',
 'Peshoslav: QH, QC, JS, JD, JC',
 'Pesho: JD, JD, JD, JD, JD, JD']);
-
-//
