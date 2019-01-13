@@ -46,12 +46,47 @@ function solve(arr){
 
     let length = nonVisitors.size;
     console.log(length);
-    console.log(vipArr.length + regularArr.length);
-    console.log(vipArr.join(" "));
-    console.log(regularArr.join(" "));
+
+    for (let ppl of vipArr){
+        console.log(ppl);
+    }
+
+    for (let ppl of regularArr){
+        console.log(ppl);
+    }
 
 }
 
+solve(["m8rfQBvl",
+"fc1oZCE0",
+"UgffRkOn",
+"7ugX7bm0",
+"9CQBGUeJ",
+"2FQZT3uC",
+"dziNz78I",
+"mdSGyQCJ",
+"LjcVpmDL",
+"fPXNHpm1",
+"HTTbwRmM",
+"B5yTkMQi",
+"8N0FThqG",
+"xys2FYzn",
+"MDzcM9ZK",
+"PARTY",
+"2FQZT3uC",
+"dziNz78I",
+"mdSGyQCJ",
+"LjcVpmDL",
+"fPXNHpm1",
+"HTTbwRmM",
+"B5yTkMQi",
+"8N0FThqG",
+"m8rfQBvl",
+"fc1oZCE0",
+"UgffRkOn",
+"7ugX7bm0",
+"9CQBGUeJ"])
+/*
 solve(["7IK9Yo0h",
 "9NoBUajQ",
 "Ce8vwPmE",
@@ -61,3 +96,4 @@ solve(["7IK9Yo0h",
 "9NoBUajQ",
 "Ce8vwPmE",
 "SVQXQCbc"])
+*/
