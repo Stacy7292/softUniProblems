@@ -44,6 +44,8 @@ function solve(arr){
         }
     }
 
+    let length = nonVisitors.size;
+    console.log(length);
     console.log(vipArr.length + regularArr.length);
     console.log(vipArr.join(" "));
     console.log(regularArr.join(" "));
