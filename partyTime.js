@@ -5,3 +5,57 @@
 // 5. we separate the set nonVisitors into two new arrays - VIP and Regular;
 // 6. print the size of the set nonVisitors;
 // 7. print VIP and then Regular;
+
+function solve(arr){
+    let reservations = new Set();
+    let guests = new Set();
+
+    for (let reservation of arr){
+        if (reservation === "PARTY"){
+            break;
+        }
+
+        reservations.add(reservation);
+    }
+
+    let index = arr.indexOf("PARTY");
+        arr.splice(0, index + 1);
+
+    for (let guest of arr){
+        guests.add(guest);
+    }
+
+    let nonVisitors = new Set();
+
+    for (let guest of reservations){
+        if (!guests.has(guest)){
+            nonVisitors.add(guest);
+        }
+    }
+
+    let vipArr = [];
+    let regularArr =[];
+
+    for (let guest of nonVisitors){
+        if (isNaN(Number(guest[0]))){
+            regularArr.push(guest);
+        } else {
+            vipArr.push(guest);
+        }
+    }
+
+    console.log(vipArr.length + regularArr.length);
+    console.log(vipArr.join(" "));
+    console.log(regularArr.join(" "));
+
+}
+
+solve(["7IK9Yo0h",
+"9NoBUajQ",
+"Ce8vwPmE",
+"SVQXQCbc",
+"tSzE5t0p",
+"PARTY",
+"9NoBUajQ",
+"Ce8vwPmE",
+"SVQXQCbc"])
