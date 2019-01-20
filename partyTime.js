@@ -5,7 +5,7 @@
 // 5. we separate the set nonVisitors into two new arrays - VIP and Regular;
 // 6. print the size of the set nonVisitors;
 // 7. print VIP and then Regular;
-// 8. done
+// 8. done.
 
 function solve(arr){
     let reservations = new Set();
@@ -86,7 +86,7 @@ solve(["m8rfQBvl",
 "fc1oZCE0",
 "UgffRkOn",
 "7ugX7bm0",
-"9CQBGUeJ"])
+"9CQBGUeJ"]);
 /*
 solve(["7IK9Yo0h",
 "9NoBUajQ",
