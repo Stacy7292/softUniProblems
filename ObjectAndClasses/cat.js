@@ -8,6 +8,14 @@ function solve(arr) {
         meow() {
             console.log(`${this.name}, age ${this.age} says Meow`)
         }
+
+        getOldder() {
+            this.age++;
+        }
+
+        setName(name) {
+            this.name = name;
+        }
     }
 
     for (let partsStr of arr) {
@@ -17,6 +25,8 @@ function solve(arr) {
 
         let firstCat = new Cat(name, age);
 
+        firstCat.meow();
+        firstCat.setName("Lilly");
         firstCat.meow();
     }
 }
