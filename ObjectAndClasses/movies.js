@@ -36,33 +36,33 @@ function solve(arr) {
             let newMovie = new Movie(movieName, "", "");
             moviesRepository.addMovie(newMovie);
 
-        } else if (inputLine.includes(" directed by ")){
+        } else if (inputLine.includes(" directed by ")) {
             let partsArr = inputLine.split(" directed by ");
             let movieName = partsArr[0];
             let director = partsArr[1];
 
             let foundMovie = moviesRepository.getMovie(movieName);
-            if (foundMovie){
+            if (foundMovie) {
                 foundMovie.director = director;
             }
 
-        } else if (inputLine.includes(" on date ")){
+        } else if (inputLine.includes(" on date ")) {
             let partsArr = inputLine.split(" on date ");
             let movieName = partsArr[0];
             let date = partsArr[1];
 
             let foundMovie = moviesRepository.getMovie(movieName);
-            if (foundMovie){
+            if (foundMovie) {
                 foundMovie.date = date;
             }
         }
     }
 
-    for (let movie of moviesRepository.movies){
-        console.log(`${movie.name} ${movie.director} ${movie.date}`)
+    for (let movie of moviesRepository.movies) {
+        console.log(JSON.stringify(movie))
     }
-
 }
+
 
 solve(['add movie Fast and Furious',
     'add movie Godfather',
