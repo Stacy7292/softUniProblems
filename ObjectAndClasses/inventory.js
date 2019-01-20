@@ -9,7 +9,7 @@ function solve(arr){
         heroes.push(JSON.stringify({name, level, items}));
     }
 
-    console.log(`[${heroes.join(", ")}]`)
+    console.log(`[${heroes.join(",")}]`)
 
 }
 
