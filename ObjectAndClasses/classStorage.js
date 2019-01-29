@@ -8,7 +8,7 @@ class Storage {
     addProduct(product){
         this.capacity -= product.quantity;
         this.totalCost += product.price * product.quantity;
-        this.storage.push(product);;
+        this.storage.push(product);
     }
 
     getProducts(products){

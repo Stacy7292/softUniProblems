@@ -4,6 +4,7 @@ function solve(arr){
 
     let flights = {};
 
+    //fill the object with initial flights
     for (let inputLine of initialFlights){
         let [sector, destination] = inputLine.split(" ");
 
@@ -12,6 +13,7 @@ function solve(arr){
          }
     }
 
+    //change the statuses of the given sectors (with "Cancelled");
     for (let inputLine of changedStatuses){
         let [sector, changedStatus] = inputLine.split(" ");
 

@@ -11,11 +11,11 @@ function solve(arr){
         jsonTowns.push(JSON.stringify({
             Town: town,
             Latitude: lat,
-            Longtitude: long
+            Longitude: long
         }));
     }
 
-    console.log(`[${jsonTowns.join(",")}`);
+    console.log(`[${jsonTowns.join(",")}]`);
 }
 
 solve(['| Town | Latitude | Longitude |',
