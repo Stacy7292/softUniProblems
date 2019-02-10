@@ -1,28 +1,36 @@
 function solve(arr) {
-    let catalogue = {};
 
-    for (let inputLine of arr) {
+    class Product {
+        constructor(name, price){
+            this.name = name;
+            this.price = price;
+        }
+    }
+
+    let catalogue = [];
+
+    for (let inputLine of arr){
         let [name, price] = inputLine.split(" : ");
-        price = +price;
-        let initial = name[0];
+        price = Number(price);
 
-        if (!catalogue.hasOwnProperty(initial)) {
-            catalogue[initial] = {};
-        }
-        let products = catalogue[initial];
-        products[name] = price;
+        let newProduct = new Product(name, price);
+        catalogue.push(newProduct);
     }
 
-    let sorted = Object.entries(catalogue).sort((a, b) => a[0].localeCompare(b[0]));
+    let sortedCatalogue = catalogue.sort((a, b) => a.name.localeCompare(b.name));
+    let flagLetter = "";
 
-    for (let [initial, products] of sorted) {
-        let sortedProducts = Object.entries(products).sort((a, b) => a[0].localeCompare(b[0]));
+    for (let product of sortedCatalogue){
+        let initialLetter = product.name[0];
 
-        console.log(initial);
-        for (let [name, price] of sortedProducts) {
-            console.log(`  ${name}: ${price}`);
+        if (initialLetter != flagLetter){
+            console.log(initialLetter);
+            flagLetter = initialLetter;
         }
+
+        console.log(`${product.name}: ${product.price}`);
     }
+
 }
 
 solve(["Appricot : 20.4",
@@ -33,3 +41,22 @@ solve(["Appricot : 20.4",
     "Apple : 1.25",
     "Anti-Bug Spray : 15",
     "T-Shirt : 10"]);
+
+// loop through the array and take the initial letter
+// create a class with name Product with two properties: name, price;
+//
+/*
+ A
+Anti-Bug Spray: 15
+Apple: 1.25
+Appricot: 20.4
+ B
+Boiler: 300
+ D
+Deodorant: 10
+ F
+Fridge: 1500
+ T
+T-Shirt: 10
+TV: 1499
+ */
