@@ -78,7 +78,6 @@ Indice
 ||||||Default Security
 
 */
-=======
     let systemRegister = {};
 
     for (let inputLine of arr){
@@ -134,4 +133,3 @@ solve(["SULS | Main Site | Home Page",
 
 
 
->>>>>>> 6e2377bad664631c3dab27ffc8dda49f6055edcd
